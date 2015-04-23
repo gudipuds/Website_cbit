@@ -1,0 +1,6 @@
+a, .colored, .previous a:hover, .next a:hover, .list {
+	color:#6495ed;
+}
+.list {
+	list-style-image: url("../../images/icons/bullet_blue.jpg");
+}

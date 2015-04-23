@@ -1,0 +1,862 @@
+/*
+Theme Name : Meezio
+Theme URL : http://themeforest.net/item/meezio/83681
+Author URL : http://themeforest.net/user/Keliah
+Version : 2.0
+*/
+
+/*
+
+TABLE OF CONTENTS
+
+01 RESET
+02 GRID
+03 GENERAL STYLES
+04 HEADER
+05 IMAGES
+06 TYPOGRAPHY
+07 TABS
+08 CONTACT
+09 SOCIAL ICONS
+10 FOOTER
+
+*/
+
+
+
+/*  _______________________________________
+
+	01 RESET
+    _______________________________________  */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: center;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+
+
+/*  _______________________________________
+
+	02 GRID
+    _______________________________________  */
+
+
+
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+
+.container {
+	width: 860px;
+	height:500px;
+	margin:50px auto;
+	position:relative;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_260,
+.grid_540,
+.grid_820 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 20px;
+}
+
+/* Grid >> 3 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container .grid_260 {
+	width:400px;
+}
+
+.container .grid_540 {
+	width:350px;
+}
+
+.container .grid_820 {
+	width:820px;
+}
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+
+
+/*  _______________________________________
+
+	03 GENERAL STYLES
+    _______________________________________  */
+
+
+
+html {
+	overflow:hidden; /* Hides scrolling bars in IE */
+}
+body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	font-family:"Garmond","Lucida Grande",Arial,Helvetica,sans-serif;
+	color:#000;
+	background:#fff;
+	
+	
+}
+img {
+	border:none; 
+	margin:0;
+	padding:0;
+}
+
+/* 
+
+   The following containers are all required to display properly the scrolling layout.
+   The "mask" extends the layout in percentages, and "item" gives the width and the height of 1 single section.
+   In the default theme, we have 2 rows containing 5 sections, for a total of 10 sections.
+   So we extend the width by 5 (5 columns, or 5 section in a row) and the height by 2 (to get 2 rows).
+
+	You could also have 4 rows containing 10 sections, and we would have :
+	
+	#mask {	
+		width:800%;
+		height:400%;
+	}
+	.item {
+		width:10%;
+		height:25%;
+		float:left;
+	}
+	
+	There's just no limit !
+   
+*/
+
+#wrapper {	/* First container required */
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+	
+	#mask {	/* Second container required, the width 100% is multiplied by the number of sections on each row and the height by the number of rows */
+		width:2000%; /* Value for 5 sections (5 X 100%), it's divided with the "item" class */ 
+		height:100%; /* Value for the number of rows, in this template we have 2 rows containing each one 5 sections */
+	}
+	.item {
+		width:5%; /* Each section has a 25% width and we have 4 sections in a row (4 X 25% = 100%) */
+		height:100%;
+		float:left;
+	}
+	.content { /* Container for content */
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		position:relative;
+					overflow:auto;
+
+	}
+	
+	
+
+
+/*  _______________________________________
+
+	04 HEADER
+    _______________________________________  */
+
+
+
+	/*
+	Here are all styles for the header and the menu.
+	This header sticks to the top of the layout.
+	*/
+	
+
+#header { /* Container to display the background on the whole browser width */
+	width:100%;
+	height:40px;
+	margin:0;
+	padding:0;
+	background:url("../images/pattern1_top.png");
+	position:fixed;
+	z-index:999;
+	-moz-box-shadow:0 0 10px black;
+	-webkit-box-shadow:0 0 10px black;
+	box-shadow:0  0 10px black;	
+}
+	#header_box { /* Centered container for the header, contains the menu and the logo */
+		width: 820px;
+		margin:0px auto;
+		position: relative;
+		padding:0px 10px 0px 10px; /* Some left and right paddings to fix an alignment issue */
+	}
+	#logo {
+		background:url("../images/logo.png");
+		float:right;
+		width:482px; /* Modify these "width" and "height" values according to the size of your logo */
+		height:95px;
+	}
+
+/* Menu */
+
+#menu {
+	background:none;
+	margin:10px 0px 0px 0px; /* Some top spacing */
+	list-style:none;
+	float:left;
+}
+
+	#menu li {
+		list-style:none;
+		float:left;
+		padding-bottom:8px;
+		
+
+
+	}
+		#menu li a {
+			color:#000;
+			text-decoration:none;
+			margin-right:25px; /* Spacing between menu items */
+			font-family:Garmond;
+			position:relative;
+			z-index:888;
+			padding-bottom:20px;
+		}
+		#menu li a:hover, #menu li a.active {
+			color:#6495ED;
+			background:url("../images/icons/menu_hover.png") no-repeat center 22px;
+		}
+		#menu li a.submenu {
+			background:url("../images/icons/submenu.png") no-repeat center 19px;
+		}
+		#menu .submenu:hover, #menu .submenu.active {
+			background:url("../images/icons/submenu_hover.png") no-repeat center 22px;
+		}
+
+		/* Submenus */
+		
+		#menu li ul {
+		   display: none; /* Not displayed, they appear on mouse hover */
+		}
+		#menu li:hover ul, #menu li.hover ul {
+		   position: absolute;
+		   display: inline; /* Inline positionning */
+		   left: 0;
+		   width: 100%;
+		   margin:0px 250px;
+		   padding: 40px 0;
+		   top:15px;
+		}
+		#menu li:hover li a, #menu li.hover li a {
+		   color: #000;
+		   font-size:16px;
+		   margin-right:20px;
+		   background:url("../images/icons/bullet_menu.png") no-repeat left top;
+		   padding-left:15px;
+		}
+		#menu li li a:hover {
+		   color: # ;
+		   background:url("../images/icons/bullet_menu_hover.png") no-repeat left top;
+		}
+
+
+
+/*  _______________________________________
+
+	05 IMAGES
+    _______________________________________  */
+
+
+
+/*
+Here are the styles applied to the small thumnbails (see the "about me" section)
+*/
+
+.thumbnail {
+	width:260px;
+	height:70px;
+	padding:0;
+	margin:0 0 25px 0;
+}
+
+	.thumbnail li {
+		float:left;
+		display:block;
+	}
+	
+.thumb {
+	margin-right:25px;
+}
+
+/*
+Style applied to the pictures within the "portfolio" section 
+*/
+
+.portfolio260 {
+	height:125px;
+	width:260px;
+	margin-bottom:20px;
+	display:inline;
+	float: left;
+	position: relative;
+	border:#2B2B2B solid 1px;
+}
+
+/*
+Styles for the arrows displayed at the bottom of each section
+*/
+
+.arrow {
+	position:absolute;
+	bottom:0;
+	left:0px;
+}
+	.previous a, .next a {
+		display:block;
+		width:17px;
+		height:26px;
+	}
+	
+		.previous {
+			float:left;
+			margin-left:0px;
+			left:0;
+			background:url("../images/icons/previous.png") no-repeat left bottom;
+		}
+		.next {
+			float:right;
+			background:url("../images/icons/next.png") no-repeat right bottom;
+		}
+			.previous a:hover, .next a:hover {
+				text-decoration:none;
+			}
+		.previous span, .next span {
+			display:none;
+		}
+
+
+
+/*  _______________________________________
+
+	06 TYPOGRAPHY
+    _______________________________________  */
+
+
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin-bottom:15px; /* Gives some space between paragraphs */
+	padding:0;
+	color:#000;
+}
+
+p {	/* Default font styles for paragraphs */
+	font-size:13px;
+	line-height:16px; /* Gives space in the text */
+	padding:0;
+	text-align:left;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Garmond, Helvetica, sans-serif;
+}
+h1 {
+	font-weight:bold;
+	font-size:26px;
+	color:#000;
+	line-height:36px;
+	margin-bottom:24px;
+}
+
+h2 {
+	font-weight:bold;
+	font-size:18px;
+	color:#000;
+	margin-bottom:15px;
+}
+
+.black {
+	font-weight:bold;
+}
+a {
+	text-decoration:none;
+	font-weight:bold;
+}
+	a:hover {
+		text-decoration:underline;
+	}
+	h1 a:hover {
+		text-decoration:none;
+	}
+.list {
+	font-size: 11px;
+	font-weight:bold;
+	line-height:18px;
+	margin:0 0 15px 15px;
+}
+	.list li {
+		text-indent: 0px;
+	}
+
+#back {
+	margin:160px 0px 0px 340px;
+}
+.right {
+	text-align:right;
+}
+
+
+
+/*  _______________________________________
+
+	07 TABS
+    _______________________________________  */
+
+
+
+ul.tabs {
+	margin: 0px 0px 10px 0px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px; /*--Set height of tabs--*/
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+		background:url("../images/icons/tabs_inactive.png") no-repeat center bottom;
+
+}
+ul.tabs li a {
+	font-family:Garmond, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:16px;
+	text-decoration: none;
+	color:#000;
+	display: block;
+	padding: 5px 5px 10px 5px;
+	outline: none;
+}
+ul.tabs li a:hover {
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+	text-decoration: none;
+}
+html ul.tabs li.current a, html ul.tabs li.current a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+}
+.tab_content {
+	padding: 0px;
+	margin:30px;
+}
+.tab_container {
+	overflow: hidden;
+	clear: both;
+	float: left; 
+	width: 100%;
+}
+
+
+
+/*  _______________________________________
+
+	08 CONTACT FORM
+    _______________________________________  */
+
+
+
+/*
+Styles for the contact from labels
+*/
+
+
+/*  _______________________________________
+
+	09 SOCIAL ICONS
+    _______________________________________  */
+
+
+
+/* 
+Styles applied to the social icons, they're reduced (24px instead of 48px)
+*/
+
+.iconbar {
+	float: left;
+	list-style: none;
+	margin-bottom:20px;
+	position:relative;
+	width:260px;
+}
+	.iconbar li {
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
+		float: left;
+		position: relative;
+	}
+
+
+
+/*  _______________________________________
+
+	10 FOOTER
+    _______________________________________  */
+
+
+
+#footerSlideContainer {
+	position: fixed;
+	bottom:0;
+	  min-height: 11px;
+	width: 100%;
+		  z-index:1000;
+		  box-shadow: 0 -5px 5px #777777;
+}
+#footerSlideButton {
+    background: url(sliderButton.png) top left no-repeat transparent;
+	position: absolute;
+	top: -21px;
+	width:100%;
+	height:20px;
+	border: none;
+	cursor: pointer;
+}
+#aa{
+	position: absolute;
+left:0;
+color: #000;
+text-align: left;
+font-size: 11px;
+top: 20px;
+	border: none;
+	cursor: pointer;
+}
+#footerSlideContent {
+	width: 100%;
+	height: 0px;
+	background: #363636  ;
+	color: #CCCCCC;
+	font-size: 0.8em;
+	border: none;
+	font-family: DejaVuSansBook, Sans-Serif;
+
+
+}
+#footerSlideText {
+	padding: 15px 10px 25px 25px;
+}
+
+		#copyright{
+	position:absolute;
+	bottom:5px;
+	right:30px;	color:#fff;
+}
+		#social{
+	
+	position:fixed;
+		top:40px;
+		  z-index:1001;
+
+
+}
+#left_bot{
+	position:absolute;
+	bottom:13px;
+	left:0px;
+	color:#fff;
+}
+
+
+
+
+#sidebar{
+  position: fixed;
+  background: url('../images/sidebar.png') no-repeat; 
+  height: 400px;
+  width: 100px;
+  left:-90px;
+  -webkit-transition: left 0.6s ease;
+  -moz-transition: left 0.6s ease;
+  -o-transition: left 0.6s ease;
+  transition: left 0.6s ease;
+  top:50%; 
+  margin-top: -200px; 
+  z-index:300;
+  padding-left:12px;
+  padding-top:25px;
+  
+  font-size:10px;
+ 
+}
+#sidebar-puller{
+  position: absolute;
+  background: url('../images/sidebarpull.png') no-repeat; 
+  height: 200px;
+  width: 20px;
+  left:90px;
+  -webkit-transition: left 0.6s ease;
+  -moz-transition: left 0.6s ease;
+  -o-transition: left 0.6s ease;
+  transition: left 0.6s ease;
+  -webkit-transition: top 0.6s ease;
+  -moz-transition: top 0.6s ease;
+  -o-transition: top 0.6s ease;
+  transition: top 0.6s ease;
+  top:40%; 
+  z-index:100;
+}
+#sidebar ul{  
+  width:65px;
+ }
+ 
+#sidebar li{
+	padding-bottom:10px;
+	text-align:center;
+}
+
+#sidebar li img{
+	opacity:0.8;
+	
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+
+#sidebar li:hover img{
+opacity:1;
+}
+#sidebar:hover{
+  left:-10px;
+  -webkit-transition: left 0.6s ease;
+  -moz-transition: left 0.6s ease;
+  -o-transition: left 0.6s ease;
+   transition: left 0.6s ease;
+}
+
+
+#headerlogo{
+  float:left;
+  background: transparent url('../images/header-logo.png') no-repeat;
+  width: 525px;
+  height:160px;
+  position:relative;
+}
+
+
+#sponsor {
+	display:inline;
+	background:#000;
+	position:relative;
+	width:220px;
+	height:110px;
+	float:right;
+	margin:30px 40px 0 0;
+	-moz-box-shadow:0 0 10px black;
+	-webkit-box-shadow:0 0 10px black;
+	box-shadow:0  0 10px black;	
+}
+#sponsslider img{
+	width:100%;
+	height:100%;
+}
+
+
+#cbit img{
+ float:left;
+ padding-right:10px;
+}
+#cbit a{
+  text-decoration:none;
+  color:#000;
+  font-style:italic;
+}
+#cbit  a:hover{
+  color:#1c20a2 ;
+}
+#cbit span{
+  text-align:center;
+}
+
+
+ 
+		.easy-accordion h2{margin:0px 0 20px 0;padding:0;font-size:1.6em;}
+		.p{font-size:1.2em;line-height:170%;margin-bottom:20px}
+		.easy-accordion{display:block;position:relative;overflow:hidden;padding:0;margin:0}
+		.easy-accordion dt,.easy-accordion dd{margin:0;padding:0}
+		.easy-accordion dt,.easy-accordion dd{position:absolute}
+		.easy-accordion dt{margin-bottom:0;margin-left:0;z-index:5;/* Safari */ -webkit-transform: rotate(-90deg); /* Firefox */ -moz-transform: rotate(-90deg);-moz-transform-origin: 20px 0px;  /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);cursor:pointer;}
+		.easy-accordion dd{z-index:1;opacity:0;overflow:hidden}
+		.easy-accordion dd.active{opacity:1;}
+		.easy-accordion dd.no-more-active{z-index:2;opacity:1}
+		.easy-accordion dd.active{z-index:3}
+		.easy-accordion dd.plus{z-index:4}
+		.easy-accordion .slide-number{position:absolute;bottom:0;left:10px;font-weight:normal;font-size:1.1em;/* Safari */ -webkit-transform: rotate(90deg); /* Firefox */ -moz-transform: rotate(90deg);  /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);}
+		 
+	
+		
+		dd p{line-height:120%}
+		
+		#accordion-1{width:820px;height:350px;padding:30px;background:#fff;}
+		#accordion-1 dl{width:820px;height:350px}	
+		#accordion-1 dt{height:46px;line-height:44px;text-align:right;padding:0 15px 0 0;font-size:1.1em;font-weight:bold;font-family: Garmond, Geneva, sans-serif;letter-spacing:1px;background:#fff url(../images/slide-title-inactive-1.png) 0 0 no-repeat;color:#fff}
+		#accordion-1 dt.active{cursor:pointer;color:#fff;background:#fff url(../images/slide-title-active-1.png) 0 0 no-repeat}
+		#accordion-1 dt.hover{color:#68889b;}
+		#accordion-1 dt.active.hover{color:#fff}
+		#accordion-1 dd{padding:25px;background:url(../images/slide.png) bottom left repeat-x;border-left:0;margin-right:3px}
+		#accordion-1 .slide-number{color:#68889b;left:10px;font-weight:bold}
+		#accordion-1 .active .slide-number{color:#fff;}
+		#accordion-1 a{color:#68889b}
+		#accordion-1 dd img{float:right;}
+		#accordion-1 h2{font-size:2.0em;margin-top:10px}
+		#accordion-1 .more{padding-top:10px;display:block}
+
+
+
+
+
+.pquote {
+			width: 700px;
+			background: url(../images/openquote.png) top left no-repeat;
+			color: #030;
+			font-size: 2em;
+			line-height: 0.9;
+			font-style: italic;
+			padding: 0.5em;
+			margin: 0;
+		}
+		
+		.pquote p:first-letter {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		
+		
+.f-right { text-align:right;color:white;width:250px; }
+.f-left { margin-top:12px; }		
+		
+span.cbit { color:#4CC2E6;font-size:40px;font-family:marcelita !important;font-weight:bold; }
+div.spons_name_heading {
+		font-family: "Lucida Grande", "Times New Roman";
+		color: #1c7cff;
+		font-size: 120%;
+		font-stretch: ultra-expanded;
+		text-align: center;
+		font-variant: small-caps;
+		background-color: #f9f9f9;
+		font-weight: bold;
+		word-spacing: .3em;
+		letter-spacing: .1em;
+		box-shadow: 0 0 3px #6a6a6a; 
+		-moz-box-shadow:  0 0 3px #6a6a6a;  
+		-webkit-box-shadow:  0 0 3px #6a6a6a; 
+		}
+div.spons_name_heading h3 {
+		font-size: 110%;
+		font-family: Georgia;
+				color: #1c7cff;
+
+		}

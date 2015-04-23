@@ -1,0 +1,29 @@
+{
+		"files": [
+			{
+				"source":"js/jquery-1.6.4.min.js",
+				"type":"SCRIPT",
+				"size":94.208
+			},
+			{
+				"source":"js/jquery.scrollTo.js",
+				"type":"SCRIPT",
+				"size":8.192
+			},
+			{
+				"source":"js/jquery.scroller.js",
+				"type":"SCRIPT",
+				"size":4.096
+			},			
+			{
+				"source":"js/jquery.li-scroller.1.0.js",
+				"type":"SCRIPT",
+				"size":8.192
+			},
+			{
+				"source":"js/menu.js",
+				"type":"SCRIPT",
+				"size":4.096
+			}
+		]
+	}

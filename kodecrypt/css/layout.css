@@ -1,0 +1,704 @@
+/*
+Theme Name : Meezio
+Theme URL : http://themeforest.net/item/meezio/83681
+Author URL : http://themeforest.net/user/Keliah
+Version : 2.0
+*/
+
+/*
+
+TABLE OF CONTENTS
+
+01 RESET
+02 GRID
+03 GENERAL STYLES
+04 HEADER
+05 IMAGES
+06 TYPOGRAPHY
+07 TABS
+08 CONTACT
+09 SOCIAL ICONS
+10 FOOTER
+
+*/
+
+
+
+/*  _______________________________________
+
+	01 RESET
+    _______________________________________  */
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: center;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+
+
+/*  _______________________________________
+
+	02 GRID
+    _______________________________________  */
+
+
+
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+
+.container {
+	width: 860px;
+	height:500px;
+	margin:80px auto;
+	position:relative;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_260,
+.grid_540,
+.grid_820 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 20px;
+}
+
+/* Grid >> 3 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container .grid_260 {
+	width:400px;
+}
+
+.container .grid_540 {
+	width:350px;
+}
+
+.container .grid_820 {
+	width:820px;
+}
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+
+
+/*  _______________________________________
+
+	03 GENERAL STYLES
+    _______________________________________  */
+
+
+
+html {
+	overflow:hidden; /* Hides scrolling bars in IE */
+}
+body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	font-family:"Garmond","Lucida Grande",Arial,Helvetica,sans-serif;
+	color:#000;
+	background:#fff;
+	
+	
+}
+img {
+	border:none; 
+	margin:0;
+	padding:0;
+}
+
+/* 
+
+   The following containers are all required to display properly the scrolling layout.
+   The "mask" extends the layout in percentages, and "item" gives the width and the height of 1 single section.
+   In the default theme, we have 2 rows containing 5 sections, for a total of 10 sections.
+   So we extend the width by 5 (5 columns, or 5 section in a row) and the height by 2 (to get 2 rows).
+
+	You could also have 4 rows containing 10 sections, and we would have :
+	
+	#mask {	
+		width:800%;
+		height:400%;
+	}
+	.item {
+		width:10%;
+		height:25%;
+		float:left;
+	}
+	
+	There's just no limit !
+   
+*/
+
+#wrapper {	/* First container required */
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+}
+	
+	#mask {	/* Second container required, the width 100% is multiplied by the number of sections on each row and the height by the number of rows */
+		width:2000%; /* Value for 5 sections (5 X 100%), it's divided with the "item" class */ 
+		height:100%; /* Value for the number of rows, in this template we have 2 rows containing each one 5 sections */
+	}
+	.item {
+		width:5%; /* Each section has a 25% width and we have 4 sections in a row (4 X 25% = 100%) */
+		height:100%;
+		float:left;
+	}
+	.content { /* Container for content */
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		position:relative;
+					overflow:auto;
+
+	}
+	
+	
+
+
+/*  _______________________________________
+
+	04 HEADER
+    _______________________________________  */
+
+
+
+	/*
+	Here are all styles for the header and the menu.
+	This header sticks to the top of the layout.
+	*/
+	
+
+#header { /* Container to display the background on the whole browser width */
+	width:100%;
+	height:50px;
+	margin:0;
+	padding:0;
+	/*background:url("../images/background/pattern2_top.jpg");*/
+	position:fixed;
+	z-index:999;
+}
+	#header_box { /* Centered container for the header, contains the menu and the logo */
+		width: 820px;
+		margin:0px auto;
+		position: relative;
+		padding:0px 10px 0px 10px; /* Some left and right paddings to fix an alignment issue */
+	}
+	#logo {
+		background:url("../images/logo.png");
+		float:right;
+		width:482px; /* Modify these "width" and "height" values according to the size of your logo */
+		height:95px;
+	}
+
+/* Menu */
+
+#menu {
+	background:none;
+	margin:10px 0px 0px 0px; /* Some top spacing */
+	list-style:none;
+	float:left;
+}
+
+	#menu li {
+		list-style:none;
+		float:left;
+		padding-bottom:8px;
+		
+
+
+	}
+		#menu li a {
+			color:#000;
+			text-decoration:none;
+			margin-right:40px; /* Spacing between menu items */
+			font-family:Garmond;
+			position:relative;
+			z-index:888;
+			padding-bottom:20px;
+		}
+		#menu li a:hover, #menu li a.active {
+			color:#6495ED;
+			background:url("../images/icons/menu_hover.png") no-repeat center 22px;
+		}
+		#menu li a.submenu {
+			background:url("../images/icons/submenu.png") no-repeat center 19px;
+		}
+		#menu .submenu:hover, #menu .submenu.active {
+			background:url("../images/icons/submenu_hover.png") no-repeat center 22px;
+		}
+
+		/* Submenus */
+		
+		#menu li ul {
+		   display: none; /* Not displayed, they appear on mouse hover */
+		}
+		#menu li:hover ul, #menu li.hover ul {
+		   position: absolute;
+		   display: inline; /* Inline positionning */
+		   left: 0;
+		   width: 100%;
+		   margin:0px 250px;
+		   padding: 40px 0;
+		   top:15px;
+		}
+		#menu li:hover li a, #menu li.hover li a {
+		   color: #000;
+		   font-size:16px;
+		   margin-right:20px;
+		   background:url("../images/icons/bullet_menu.png") no-repeat left top;
+		   padding-left:15px;
+		}
+		#menu li li a:hover {
+		   color: # ;
+		   background:url("../images/icons/bullet_menu_hover.png") no-repeat left top;
+		}
+
+
+
+/*  _______________________________________
+
+	05 IMAGES
+    _______________________________________  */
+
+
+
+/*
+Here are the styles applied to the small thumnbails (see the "about me" section)
+*/
+
+.thumbnail {
+	width:260px;
+	height:70px;
+	padding:0;
+	margin:0 0 25px 0;
+}
+
+	.thumbnail li {
+		float:left;
+		display:block;
+	}
+	
+.thumb {
+	margin-right:25px;
+}
+
+/*
+Style applied to the pictures within the "portfolio" section 
+*/
+
+.portfolio260 {
+	height:125px;
+	width:260px;
+	margin-bottom:20px;
+	display:inline;
+	float: left;
+	position: relative;
+	border:#2B2B2B solid 1px;
+}
+
+/*
+Styles for the arrows displayed at the bottom of each section
+*/
+
+.arrow {
+	position:absolute;
+	bottom:0;
+	left:0px;
+}
+	.previous a, .next a {
+		display:block;
+		width:17px;
+		height:26px;
+	}
+	
+		.previous {
+			float:left;
+			margin-left:0px;
+			left:0;
+			background:url("../images/icons/previous.png") no-repeat left bottom;
+		}
+		.next {
+			float:right;
+			background:url("../images/icons/next.png") no-repeat right bottom;
+		}
+			.previous a:hover, .next a:hover {
+				text-decoration:none;
+			}
+		.previous span, .next span {
+			display:none;
+		}
+
+
+
+/*  _______________________________________
+
+	06 TYPOGRAPHY
+    _______________________________________  */
+
+
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin-bottom:15px; /* Gives some space between paragraphs */
+	padding:0;
+	color:#000;
+}
+
+p {	/* Default font styles for paragraphs */
+	font-size:12px;
+	line-height:16px; /* Gives space in the text */
+	padding:0;
+	text-align:left;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Garmond, Helvetica, sans-serif;
+}
+h1 {
+	font-weight:bold;
+	font-size:26px;
+	color:#000;
+	line-height:36px;
+	margin-bottom:24px;
+}
+
+h2 {
+	font-weight:bold;
+	font-size:18px;
+	color:#000;
+	margin-bottom:15px;
+}
+
+.black {
+	font-weight:bold;
+}
+a {
+	text-decoration:none;
+	font-weight:bold;
+}
+	a:hover {
+		text-decoration:underline;
+	}
+	h1 a:hover {
+		text-decoration:none;
+	}
+.list {
+	font-size: 11px;
+	font-weight:bold;
+	line-height:18px;
+	margin:0 0 15px 15px;
+}
+	.list li {
+		text-indent: 0px;
+	}
+
+#back {
+	margin:160px 0px 0px 340px;
+}
+.right {
+	text-align:right;
+}
+
+
+
+/*  _______________________________________
+
+	07 TABS
+    _______________________________________  */
+
+
+
+ul.tabs {
+	margin: 0px 0px 10px 0px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px; /*--Set height of tabs--*/
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+		background:url("../images/icons/tabs_inactive.png") no-repeat center bottom;
+
+}
+ul.tabs li a {
+	font-family:Garmond, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:16px;
+	text-decoration: none;
+	color:#000;
+	display: block;
+	padding: 5px 5px 10px 5px;
+	outline: none;
+}
+ul.tabs li a:hover {
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+	text-decoration: none;
+}
+html ul.tabs li.current a, html ul.tabs li.current a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background:url("../images/icons/tabs_hover.png") no-repeat center bottom;
+	color:#FFFFFE;
+}
+.tab_content {
+	padding: 0px;
+	margin:30px;
+}
+.tab_container {
+	overflow: hidden;
+	clear: both;
+	float: left; 
+	width: 100%;
+}
+
+
+
+/*  _______________________________________
+
+	08 CONTACT FORM
+    _______________________________________  */
+
+
+
+/*
+Styles for the contact from labels
+*/
+
+
+/*  _______________________________________
+
+	09 SOCIAL ICONS
+    _______________________________________  */
+
+
+
+/* 
+Styles applied to the social icons, they're reduced (24px instead of 48px)
+*/
+
+.iconbar {
+	float: left;
+	list-style: none;
+	margin-bottom:20px;
+	position:relative;
+	width:260px;
+}
+	.iconbar li {
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
+		float: left;
+		position: relative;
+	}
+
+
+
+/*  _______________________________________
+
+	10 FOOTER
+    _______________________________________  */
+
+
+
+#footer { /* Footer container (whole browser width) */
+	position: absolute;
+	bottom: 0;
+	border-top:#999 solid 1px;
+	width: 100%;
+	height:30px;
+}
+	#footer_box { /* Centered footer container with som padding to align properly the content */
+		width: 820px;
+		height:30px;
+		margin:0px auto;
+		position: relative;
+		padding:0px 10px 0px 10px;
+	}
+		#copyright{
+	position:fixed;
+	bottom:5px;
+	right:30px;	color:#fff;
+}
+		#social{
+	
+	position:absolute;
+		bottom:50px;
+
+}
+#left_bot{
+	position:fixed;
+	bottom:13px;
+	left:0px;
+	color:#fff;
+}
+
+
+
+
+#headerlogo{
+  float:left;
+  background: transparent url('../images/header-logo.png') no-repeat;
+  width: 525px;
+  height:160px;
+  position:relative;
+}
+
+
+#sponsor {
+	display:inline;
+	background:#000;
+	position:relative;
+	width:220px;
+	height:110px;
+	float:right;
+	margin:30px 40px 0 0;
+	-moz-box-shadow:0 0 10px black;
+	-webkit-box-shadow:0 0 10px black;
+	box-shadow:0  0 10px black;	
+}
+#sponsslider img{
+	width:100%;
+	height:100%;
+}
+
+
+#cbit img{
+ float:left;
+ padding-right:10px;
+}
+#cbit a{
+  text-decoration:none;
+  color:#000;
+  font-style:italic;
+}
+#cbit  a:hover{
+  color:#1c20a2 ;
+}
+#cbit span{
+  text-align:center;
+}
+
+
+
+.pquote {
+			width: 700px;
+			background: url(../images/openquote.png) top left no-repeat;
+			color: #030;
+			font-size: 2em;
+			line-height: 0.9;
+			font-style: italic;
+			padding: 0.5em;
+			margin: 0;
+		}
+		
+		.pquote p:first-letter {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		
+		
+		
